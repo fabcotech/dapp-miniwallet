@@ -1,0 +1,26 @@
+{
+  "manifest": {
+    "title": "Mini wallet",
+    "description": "",
+    "author": "Willy",
+    "cssLibraries": ["bulma@0.x"],
+    "jsLibraries": [
+      "react@16.9.0",
+      "react-dom@16.9.0",
+      "redux@4.0.4",
+      "react-redux@7.1.1"
+    ],
+    "jsPath": "dist/main.js",
+    "cssPath": "mini-wallet.css",
+    "htmlPath": "mini-wallet.html"
+  },
+  "options": {
+    "platform": "rchain",
+    "host": "127.0.0.1",
+    "port": "40401",
+    "private_key": "dd95d32974b2290607baf918c117d5f2c0cf7121a0c3b58d70ac4775af3ba76c",
+    "public_key": "04e49ceaebbf8646e1e04e63ffa41be6724173b0bf1d9ab71f878912d0c3c50b4e68df65e6dd7cd94d0965ac7b2a3464a9f27d6b8ccc5cc30fb2569536c758ffbe",
+    "registry_uri": "y8xbkidd6of3wpg4ckknnhpap6m7s8ze6b6arumrqidsicek6tnzsk",
+    "unforgeable_name_id": "67e210f4bae91556d8317a5db79fc7f690e260c41c1f692eefa2e9d87445c57f"
+  }
+}

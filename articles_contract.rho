@@ -1,0 +1,43 @@
+new basket, articles, update, create, entry, hashname, verify, test, entryUriCh, updateUriCh, insertArbitrary(`rho:registry:insertArbitrary`), stdout(`rho:io:stdout`) in {
+
+  // Send an initially empty map
+  articles!({}) |
+  
+
+  // create a record
+  contract create(article, return) = {
+    stdout!("create") |
+    for (current <- articles) {
+      match *current.contains(*article.get("id")) {
+      true => {
+        return!("error: id " ++ *article.get("id") ++ " already taken") |
+        articles!(*current)
+      }
+      false => {
+        return!("success: article " ++ *article.get("id") ++ " created") |
+        articles!(*current.set(*article.get("id"), *article))
+      }}
+    }
+  } |
+
+  contract entry(action, return) = {
+    match *action.get("type") {
+      "CREATE" => {
+        create!(*action.get("payload"), *return)
+      }
+    }
+  } |
+
+  insertArbitrary!(*entry, *entryUriCh) |
+
+  for (uri <- entryUriCh) {
+    basket!({
+      "registry_uri": *uri,
+      "unforgeable_name": *articles
+    }) |
+    stdout!({
+      "registry_uri": *uri,
+      "unforgeable_name": *articles
+    })
+  }
+}

@@ -1,0 +1,21 @@
+body {
+  background: #efeaea;
+  height: 100vh;
+}
+.container {
+  padding-top: 40px;
+}
+
+.title.is-2,
+.title.is-4,
+.title.is-3 {
+  font-weight: 300;
+}
+
+.public-key {
+  font-size: 0.5em;
+}
+
+.send-rev {
+  max-width: 600px;
+}
