@@ -14,6 +14,9 @@ const FormComponent = props => {
         browser by using the <b>dappyRChain.identify</b> and{" "}
         <b>dappyRChain.requestPayment</b> functions .<br />
         <br />
+        Source code : https://github.com/fabcotech/dapp-miniwallet
+        <br />
+        <br />
       </p>
       {props.transactionMessage ? (
         <div onClick={props.removeTransactionMessage} className="message">
